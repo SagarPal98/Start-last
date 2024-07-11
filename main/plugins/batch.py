@@ -26,7 +26,7 @@ ft = f"To use this bot you've to join @{fs}."
 
 batch = []
 
-@Drone.on(events.NewMessage(incoming=True, from_users=AUTH, pattern='/cancel'))
+@Drone.on(events.NewMessage(incoming=True, from_users=AUTH, pattern='/stop'))
 async def cancel(event):
     if not event.sender_id in batch:
         return await event.reply("No batch active.")
@@ -79,18 +79,18 @@ async def _batch(event):
 
 async def run_batch(userbot, client, sender, link, _range):
     for i in range(_range):
-        timer = 60
+        timer = 1
         if i < 25:
-            timer = 5
+            timer = 1
         if i < 50 and i > 25:
-            timer = 10
+            timer = 1
         if i < 100 and i > 50:
-            timer = 15
+            timer = 1
         if not 't.me/c/' in link:
             if i < 25:
-                timer = 2
+                timer = 1
             else:
-                timer = 3
+                timer = 1
         try: 
             if not sender in batch:
                 await client.send_message(sender, "Batch completed.")
