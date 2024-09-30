@@ -4,7 +4,7 @@ https://github.com/vasusen-code/Telethon/archive/refs/tags/v1.24.0.zip
 https://github.com/vasusen-code/ethon/archive/refs/tags/v0.1.5.zip
 cryptg
 tgcrypto
-pyrogram
+https://codeload.github.com/KurimuzonAkuma/pyrogram/zip/refs/heads/dev
 python-decouple
 Flask==1.1.2
 gunicorn==20.1.0
