@@ -2,6 +2,8 @@
 
 from pyrogram import Client
 
+import asyncio
+
 from telethon.sessions import StringSession
 from telethon.sync import TelegramClient
 
