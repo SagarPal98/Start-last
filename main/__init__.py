@@ -25,13 +25,7 @@ bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
 userbot = Client("saverestricted", session_string=SESSION, api_hash=API_HASH, api_id=API_ID) 
 
-Bot = Client(
-    "SaveRestricted",
-    bot_token=BOT_TOKEN,
-    api_id=int(API_ID),
-    api_hash=API_HASH
-)    
-
+Bot = Client("SaveRestricted", bot_token=BOT_TOKEN, api_id=int(API_ID), api_hash=API_HASH)    
 
 async def start_bots():
     try:
