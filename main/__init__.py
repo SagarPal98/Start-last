@@ -28,7 +28,7 @@ async def main():
     me = await bot.get_me()
     print(me)
 
-bot.run(main())
+asyncio.run(main())
 
 async def start_bots():
     try:
