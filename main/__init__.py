@@ -31,6 +31,15 @@ async def start_bots():
         print(f"Userbot failed to start: {e}")
         sys.exit(1)
 
+  
+      try:
+        await bot.start()
+        print("Pyrogram bot started successfully!")
+    except Exception as e:
+        print(f"Bot failed to start: {e}")
+        sys.exit(1)
+      
+
     try:
         await Bot.start()
         print("Pyrogram bot started successfully!")
