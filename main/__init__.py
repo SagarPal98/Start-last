@@ -20,7 +20,7 @@ AUTH = config("AUTH", default=None, cast=int)
 
 # Initialize clients
 bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
-Bal = Client("SaveRestricted", bot_token=BOT_TOKEN, api_id=int(API_ID), api_hash=API_HASH)
+Bot = Client("SaveRestricted", bot_token=BOT_TOKEN, api_id=int(API_ID), api_hash=API_HASH)
 userbot = Client("saverestricted", session_string=SESSION, api_hash=API_HASH, api_id=API_ID)
 
 async def start_bots():
@@ -32,7 +32,7 @@ async def start_bots():
         sys.exit(1)
       
     try:
-        await Bal.start()
+        await Bot.start()
         print("Pyrogram bot started successfully!")
     except Exception as e:
         print(f"Bot failed to start: {e}")
