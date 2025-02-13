@@ -25,12 +25,6 @@ bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
 userbot = Client("saverestricted", session_string=SESSION, api_hash=API_HASH, api_id=API_ID) 
 
-try:
-    await userbot.start()
-except BaseException:
-    print("Userbot Error ! Have you added SESSION while deploying??")
-    sys.exit(1)
-
 Bot = Client(
     "SaveRestricted",
     bot_token=BOT_TOKEN,
@@ -38,8 +32,24 @@ Bot = Client(
     api_hash=API_HASH
 )    
 
-try:
-    await Bot.start()
-except Exception as e:
-    print(e)
-    sys.exit(1)
+
+async def start_bots():
+    try:
+        await userbot.start()
+        print("Userbot started successfully!")
+    except Exception as e:
+        print(f"Userbot failed to start: {e}")
+        sys.exit(1)
+
+    try:
+        await Bot.start()
+        print("Pyrogram bot started successfully!")
+    except Exception as e:
+        print(f"Bot failed to start: {e}")
+        sys.exit(1)
+
+    print("All bots are up and running.")
+    await asyncio.Event().wait()  # Keep the bot alive
+
+def run_bots():
+    asyncio.run(start_bots())
