@@ -24,11 +24,11 @@ Bot = Client("SaveRestricted", bot_token=BOT_TOKEN, api_id=int(API_ID), api_hash
 userbot = Client("saverestricted", session_string=SESSION, api_hash=API_HASH, api_id=API_ID)
 
 async def main():
-    await app.start()  # Start the client
-    me = await app.get_me()
+    await bot.start()  # Start the client
+    me = await bot.get_me()
     print(me)
 
-app.run(main())
+bot.run(main())
 
 async def start_bots():
     try:
