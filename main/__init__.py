@@ -23,6 +23,17 @@ bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 Bot = Client("SaveRestricted", bot_token=BOT_TOKEN, api_id=int(API_ID), api_hash=API_HASH)
 userbot = Client("saverestricted", session_string=SESSION, api_hash=API_HASH, api_id=API_ID)
 
+from pyrogram import Client
+
+app = Client("my_account")
+
+async def main():
+    await app.start()  # Start the client
+    me = await app.get_me()
+    print(me)
+
+app.run(main())
+
 async def start_bots():
     try:
         await userbot.start()
