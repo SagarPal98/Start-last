@@ -24,7 +24,7 @@ bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 userbot = Client("saverestricted", session_string=SESSION, api_hash=API_HASH, api_id=API_ID) 
 
 try:
-    userbot.start()
+    await userbot.start()
 except BaseException:
     print("Userbot Error ! Have you added SESSION while deploying??")
     sys.exit(1)
@@ -37,7 +37,7 @@ Bot = Client(
 )    
 
 try:
-    Bot.start()
+    await Bot.start()
 except Exception as e:
     print(e)
     sys.exit(1)
